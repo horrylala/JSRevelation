@@ -4,9 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JS revelation</title>
+  <title>JS实例</title>
 </head>
 <body>
+  <script type="text/javascript">
+  //1.2
+  var Person = function Person(age, gender) {
+    this.age = age;
+    this.gender = gender;
+    this.getGender = function () {
+      return this.gender;
+    }
+  };
 
+  var cody = new Person(33, 'male');
+  console.log(typeof cody);
+  console.log(cody);
+  console.log(cody.constructor);
+
+  //1.7
+  var myArr = ['string', 10, false, null,undefined];
+  console.log(myArr);
+  //1.10
+  var piece3 = new Number('10');
+  var piece4 = piece3;
+  console.log(piece3===piece4);
+  piece3 = 10;
+  console.log(piece3===piece4);
+  console.log(piece3.constructor);
+  </script>
+  <div class="hell">
+    this is javascript;
+  </div>
 </body>
 </html>
