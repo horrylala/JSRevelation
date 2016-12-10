@@ -32,6 +32,52 @@
   piece3 = 10;
   console.log(piece3===piece4);
   console.log(piece3.constructor);
+
+  //4.8
+  var myObj1 = {
+    name: "obj1",
+    myMethod: function  () {
+      console.log(this);
+    }
+  };
+  myObj1.myMethod();
+
+  var myObj2 = function () {
+    console.log(this);
+  }
+  myObj2();
+
+  //4.10
+  var myFunc = function (a,b,c,d,e) {
+    return myFunc.length;
+  }
+  console.log(myFunc());
+
+  //use apply and call method
+  var greet = {
+    runGreet: function () {
+      console.log(this.name, arguments[0], arguments[1]);
+    }
+  }
+
+  var cody = {name: 'cody'};
+  var lisa = {name: 'lisa'};
+  greet.runGreet.call(cody, 'foo', 'bar');
+  greet.runGreet.apply(lisa, ['foo', 'bar']);
+
+  //try method using
+  !function sayHi(msg) { console.log(msg);}('hi');
+  //recursive call
+  var countDownFrom = function countDownFrom(num) {
+    console.log(num);
+    num -- ;
+    if (num < 0) {
+      return false;
+    }
+    countDownFrom(num);
+  }
+
+  countDownFrom(5);
   </script>
   <div class="hell">
     this is javascript;
