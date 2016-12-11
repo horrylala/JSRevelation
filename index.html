@@ -76,8 +76,58 @@
     }
     countDownFrom(num);
   }
-
   countDownFrom(5);
+
+  //6.3 this
+  var thisObj = {
+    fun1: function() {
+      console.log(this);
+      var fun2 = function() {
+        console.log(this);
+        var fun3 = function() {
+          console.log(this);
+        }();
+      }();
+    }
+  };
+  thisObj.fun1();
+
+  // 7.7 closure
+  var countUpFromZero = function() {
+    var count = 0;
+    return function() {
+      return count ++;
+    }
+  }();
+  console.log(countUpFromZero());
+  console.log(countUpFromZero());
+  console.log(countUpFromZero());
+
+  //9.2 Array
+  var arr = new Array(100);
+  var arrString = new Array('hello');
+  console.log(arr[0],arr.length);
+  console.log(arrString[0], arrString.length);
+
+  //10.1 string
+  var stringWithoutNewKey = String('noNewString');
+  console.log(typeof stringWithoutNewKey);
+  var stringObj = new String('hello');
+  console.log(typeof stringObj);
+  console.log(stringObj);
+
+  //12.5 boolen
+  //如果一个值是0,-0,null,false,NaN,undefined,""那么它就是false,其他为true
+  var boolValue = new Boolean(false);
+  console.log(boolValue);
+  if (boolValue) {
+    console.log("entered ,value is true or just object");
+  }
+  //14.1 null and undifined
+  var nullOrUndefinedObj = undefined;
+  console.log(nullOrUndefinedObj == null);
+  console.log(nullOrUndefinedObj === null);
+  //如果指定一个值是不可用的，可以使用null，但是永远不要指定为undefined
   </script>
   <div class="hell">
     this is javascript;
